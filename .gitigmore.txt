@@ -1,3 +1,3 @@
-*.idea
-*.vscode
-*.ipynb_checkpoints
+**.idea
+**.vscode
+**.ipynb_checkpoints
