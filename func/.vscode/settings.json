@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "C:\\Users\\kamal\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./task1",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.promptToConfigure": false
+}
