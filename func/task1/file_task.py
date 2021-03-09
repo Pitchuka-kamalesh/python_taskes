@@ -1,0 +1,6 @@
+f = open("trail.txt","r+")
+a = f.readline()
+b = f.readline()
+c = int(a)+int(b)
+f.write(str(c)+"\n")
+f.close()
