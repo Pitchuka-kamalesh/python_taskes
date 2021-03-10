@@ -389,18 +389,19 @@ adata = {}
 #     # print(a.__next__())
 
 
-# Recuration function :
+# Recreation function :
 # calling the function by it self is called recuraction function
 
 # num = 1
+# fa = 6
 # def fact(n):
-#     global num
+#     global num,fa
 #     num = num*n
 #     n+=1
-#     if <n:
+#     if n<=fa:
 #         fact(n)
 #     return num
-#
+
 # print(fact(1))
 
 # palindrome's number
@@ -414,10 +415,25 @@ adata = {}
 # else:
 #     print("given the numbers is not palindrome number:")
 
+# recurraction data
+
+
+# i = 0
+# while i<=2:
+#     j  = 0
+#     while j<=2:
+#         print(f"i value {i}:j value{j}")
+#         j+=1
+#     i+=1
 
 
 
+i= 0
+while i< 10:
+    print(i)
+    if i == 5:
+        break
 
-
+    i+=1
 
 
