@@ -291,5 +291,133 @@ adata = {}
 # a = [1,2,3,4,5,6]
 # for r in a:
 #     if r%2 == 0:
-#         print(r)
+#         print(r
+
+# i = 1
+# while i<10:
+#     if i == 0:
+#         break
+#     print(i)
+#     i+=1
+
+# class Student_data:
+#     def student(self,roll,name,addres,eng,math,ches):
+#         self.roll = roll
+#         self.name = name
+#         self.address = addres
+#         self.math = math
+#         self.eng = eng
+#         self.ches = ches
+#         self.total = self.eng+self.ches+self.math
+#         self.percent = self.total/3
+#     def show(self):
+
+# write a program for student details
+# def student(name,roll,addr,eng,math,ches):
+#     total_marks = 300
+#     total = eng+math+ches
+#     per = (total/total_marks)*100
+#     print("*"*5)
+#     print("marks memo")
+#     print(f"Student name :  {name}")
+#     print(f"roll number: {roll}")
+#     print(f"English marks :{eng}")
+#     print(f"Maths marks: {math}")
+#     print(f"chemistry marks: {ches}")
+#     print(f"Total marks : {total}")
+#     print(f'Overall total marks:{total_marks} ')
+#     print(f"percentage :{per} ")
+#     print("*" * 5)
+#
+#
+#
+#
+#
+#
+# name = input("enter the name: ")
+# roll = input("enter the roll number :")
+# addr = input("enter the address : ")
+# print("each subject overall marks 100")
+# eng = float(input("enter the english marks :"))
+# math = float(input("enter the maths marks :"))
+# chem = float(input("enter the chemistry marks:"))
+#
+# student(name=name,roll = roll,addr=addr,eng = eng,math = math,ches=chem)
+
+
+# write a lambda function with example
+#
+# # given a list of elements from 1 to 10
+#
+# a = list(filter(lambda x : x%2==0,range(1,11)))
+# print(a)
+#
+# # squaring a every number from the filter list
+#
+# b = list(map(lambda x:x**2,a))
+# print(b)
+
+# Decorator function
+# def: we have to  change the functionality of the function with out changing the code of the function
+
+# def decor_1(fun):
+#     def update_div(a,b):
+#         if b == 0:
+#             print("ZeroDivisionError because denominator is  b value is 0: ")
+#         else:
+#
+#             print(f"division value {a},{b}",a/b)
+#     return update_div
+# @decor_1
+# def div(a,b):
+#
+#     return(a/b)
+#
+# print("division of two numbers :",div(10,0))
+
+#generators:
+# generator are used generate the value in one place and we can retive the value one by one
+
+#
+# def gen_1(n):
+#     for _ in range(n):
+#         yield(_)
+#
+# a = gen_1(10)
+# for _ in range(10):
+#     print(next(a))
+#     # print(a.__next__())
+
+
+# Recuration function :
+# calling the function by it self is called recuraction function
+
+# num = 1
+# def fact(n):
+#     global num
+#     num = num*n
+#     n+=1
+#     if <n:
+#         fact(n)
+#     return num
+#
+# print(fact(1))
+
+# palindrome's number
+
+# a = input("enter num or string: ")
+# b = ""
+# for i in a:
+#     b = i+b
+# if a == b:
+#     print(f"given string or int is {a} is palindrome number")
+# else:
+#     print("given the numbers is not palindrome number:")
+
+
+
+
+
+
+
 
