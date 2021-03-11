@@ -4,6 +4,7 @@
 #
 #     pass
 #
+
 import plistlib
 # def gen_acc():
 #     i = 1
@@ -39,6 +40,17 @@ if i == 1:
 else :
     print("Enter the user name :")
     print("enter the password:")
+    if i:
+        print(" 1 is transition ")
+        print("2 is transition ")
+        print("3 is the transition details ")
+        if pass:
+            pass
+        elif pass:
+            pass
+        else :
+            pass
+
     k = input("submit")
     print()
 
