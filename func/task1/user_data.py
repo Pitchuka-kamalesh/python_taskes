@@ -38,5 +38,16 @@ if i == 1:
     print("calling the user_data function")
 else :
     print("Enter the user name :")
-    print("enter the password")
+    print("enter the password:")
     k = input("submit")
+    print()
+
+# user_name and password is true then bank balance ,transcition  if it is true then deposite and transistion ammount then valid balanvce
+# retrieving the data from the user
+#
+#bank data must store in dictnoary
+
+# then check the username and password in data
+
+# if present then trasistion details
+
