@@ -1,58 +1,60 @@
-# bank = {}
-#
-# def user_data():
-#
-#     pass
-#
+import datetime
+bank_acc = {}
 
-import plistlib
-# def gen_acc():
-#     i = 1
-#     while True:
-#         yield i
-#         i+=1
-#
 
-# accont = gen_acc()
-# account_number = accont.__next__()
-# name = input("enter the full name : ")
-# phone = input("enter the phone number : ")
-# addres = input("enter the address: ")
-# pan = input("enter the pan number")
-# card = input("enter the debit or credit card:")
-# user_name = input("enter the user name we have: ")
-# password = input("enter the password:")
-# addar = input("enter the addarnumber:")?
+def gen_acc():
+    i = 1
+    while True:
+        yield i
+        i += 1
+
+
+def user_data(**kwargs):
+    global bank_acc
+    bank_acc = kwargs
+
+    return bank_acc
+
+
+def enter_data():
+    accont = gen_acc()
+
+    acc_num = next(accont)
+
+    name = input("enter the full name : ")
+
+    phone = int(input("enter the phone number : "))
+
+    addr = input("enter the address: ")
+
+    pan = input("enter the pan number")
+
+    card = input("enter the debit or credit card:")
+
+    u_name = input("enter the user name we have: ")
+
+    u_pass = input("enter the password:")
+
+    aadhaar = int(input("enter the 12 digit  addhar number:"))
+
+    balance = float(input("Enter the min balance 5000"))
+
+    acc_date = datetime.datetime.today()
+
+    while True:
+        if len(str(aadhaar)) != 12:
+            aadhaar = int(input("enter the 12 digit addhar number:"))
+        if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
+            pan = input("enter the  correct pan number:")
+        if balance < 5000.00:
+            balance = float(input("enter the minimum balance"))
+        else:
+            break
+    hist = "deposit  " + str(acc_date) + "  amount: " + str(balance)
+    history = [hist]
+    account = user_data(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance,history=history)
+    return account
 # amount deposity  varible  only integer
-
-# while True:
-print("*"*20)
-# print("\n")
-print("Welcome To the Bank ")
-# print("\n")
-print("*"*20)
-
-print(" "*10+"Enter 1 for new user: ")
-print(" "*10+"enter 2 for exciting user:")
-i = int(input("Enter the number:"))
-if i == 1:
-    print("calling the user_data function")
-else :
-    print("Enter the user name :")
-    print("enter the password:")
-    if i:
-        print(" 1 is transition ")
-        print("2 is transition ")
-        print("3 is the transition details ")
-        if pass:
-            pass
-        elif pass:
-            pass
-        else :
-            pass
-
-    k = input("submit")
-    print()
 
 # user_name and password is true then bank balance ,transcition  if it is true then deposite and transistion ammount then valid balanvce
 # retrieving the data from the user
