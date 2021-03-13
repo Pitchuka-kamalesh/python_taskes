@@ -437,10 +437,16 @@
 #     i+=1
 #
 #
-a = 0
-if a == 0:
-    print("0")
-elif a == 0:
-    print("0")
-else:
-    pass
+# a = 0
+# if a == 0:
+#     print("0")
+# elif a == 0:
+#     print("0")
+# else:
+#     pass
+a = [10,20,'python']
+a.append("bavalue")
+b = a# deep coping or aliasing
+
+print("id a",a)
+print("id b",b)

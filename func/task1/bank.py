@@ -1,15 +1,18 @@
 from user_data import *
 import sys
+from time import *
+
 data = bank_acc
+
 
 def goback():
     print("\n")
-    print(" "*15+"1 : for go back to previous menu")
-    print(" "*15+"2 : for exit")
+    print(" " * 15 + "1 : for go back to previous menu")
+    print(" " * 15 + "2 : for exit")
     i = int(input("enter the option:"))
     if i == 1:
         transfer()
-    elif i ==2:
+    elif i == 2:
         sys.exit()
     else:
         print("option not found enter the option")
@@ -31,6 +34,8 @@ def transfer():
     else:
         transfer()
 
+#  bank details function i will print bank details and it will call goback function
+
 
 def bank_details():
     global data
@@ -39,8 +44,12 @@ def bank_details():
     goback()
 
 
+#if user select the payee option then this function will execuited this function
+
+
 def transistion():
     global data
+    print("\n")
     name = input("enter the name  of user :")
     acc_no = int(input("enter the account number:"))
     while True:
@@ -56,11 +65,14 @@ def transistion():
         print("account balance amount :", data['balance'])
         transistion()
     else:
-        print(f"amount {amount} is transfer for to {pay_name} with account {pay_acc}")
-        trn = "Transfer "+str(datetime.datetime.today())+" "+"amount:"+str(amount)
+        print(f"amount {amount} is transfer to {pay_name} with account  number {pay_acc}")
+        trn = "Transfer  Date:{0}   amount:{1}".format(str(datetime.datetime.today()), str(amount))
         data['history'].append(trn)
-        data['balance'] = data['balance']-amount
+        data['balance'] = data['balance'] - amount
         goback()
+
+
+# this function will executed thr function when the trans history function
 
 
 def trans_history():
@@ -68,18 +80,19 @@ def trans_history():
 
     for i in data['history']:
         print(i)
+    print("Balance Amount :", data['balance'])
     goback()
 
 
-print("*"*20)
+print("*" * 40)
 print("\n")
-print("Welcome To the Bank ")
+print("Welcome To the  Bank Of India ")
 print("\n")
-print("*"*20)
-
-print(" "*10+"Enter 1 for new user: ")
-print(" "*10+"enter 2 for exciting user:")
-i = int(input("Enter the number:"))
+print("*" * 40)
+sleep(1)
+print(" " * 10 + "Enter 1 for new user: ")
+print(" " * 10 + "Enter 2 for exciting user:")
+i = int(input("Enter the Option :"))
 
 if i == 1:
     print("Bank details form \n")
@@ -89,27 +102,17 @@ if i == 1:
     print("\n")
     transfer()
 else:
-    pass
-    print("Enter the user name :")
-    print("enter the password:")
-    if i == 2:
-        print(" "*20+"1 is bank details ")
-        print(" "*20+"2 is transition ")
-        print(" "*20+"3 is payee ")
+    print("*" * 40)
+    print("\n")
+    print("*" * 10 + "  Enter The Login Details  " + "*" * 10)
+    user_name = input("Enter the user name : ")
+    password = input("Enter the password :")
+    while True:
 
-        j = int(input("enter the details:"))
-        if j == 1:
-            bank_details(data)
-            pass
-        elif j == 2:
-            pass
+        if user_name in data['u_name'] and password in data['u_pass']:
+            transfer()
+            break
         else:
             pass
-
-#    k = input("submit")
-#     print()
-
-
-
 
 # goback()
