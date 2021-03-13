@@ -17,15 +17,15 @@ while True:
    print(" press 3 to update the account")
    option=int(input("Enter the option: "))
    if option==1:
-
        enter_data()
-       break
+       continue
    if option==2:
-
-       read_data()
-       break
+       acc = int(input("Enter the account Number:"))
+       read_data(acc)
+       continue
    if option==3:
-       update()
-       break
+       acc = int(input("Enter the account Number:"))
+       update(acc)
+       continue
    else:
       print("invalid option")
