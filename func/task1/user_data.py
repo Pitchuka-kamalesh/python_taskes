@@ -54,8 +54,8 @@ def enter_data():
             break
     hist = "deposit  " + str(acc_date) + "  amount: " + str(balance)
     history = [hist]
-    account = user_data(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance,history=history)
-    return account
+    accounts = user_data(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance,history=history)
+    return accounts
 # amount deposity  varible  only integer
 
 
