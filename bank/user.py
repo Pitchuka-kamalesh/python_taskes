@@ -55,19 +55,19 @@ def enter_data():
 
     balance = float(input("Enter the min balance 5000"))
 
-    # while True:
-    #     if len(str(aadhaar)) != 12:
-    #         aadhaar = int(input("enter the 12 digit addhar number:"))
-    #     if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
-    #         pan = input("enter the  correct pan number:")
-    #     if balance < 5000.00:
-    #         print("Amount is less than min amount")
-    #         balance = float(input("enter the minimum balance"))
-    #     if name == u_name:
-    #         print("user_name is unique not same as Name")
-    #         u_name = input("enter the user name we have: ")
-    #     else:
-    #         break
+    while True:
+        if len(str(aadhaar)) != 12:
+            aadhaar = int(input("enter the 12 digit addhar number:"))
+        if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
+            pan = input("enter the  correct pan number:")
+        if balance < 5000.00:
+            print("Amount is less than min amount")
+            balance = float(input("enter the minimum balance"))
+        if name == u_name:
+            print("user_name is unique not same as Name")
+            u_name = input("enter the user name we have: ")
+        else:
+            break
 
     add_costumerData(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance)
 

@@ -1,0 +1,6 @@
+	balance)
+    lis.append(phone)
+    lis.append(addr)
+    lis.append(pan)
+    lis.append(card)
+    lis.append(aadhaar)
