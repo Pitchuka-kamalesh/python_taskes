@@ -1,17 +1,34 @@
 from datetime import datetime as dt
-user_data = []
-acc_date = dt.today()
+import pickle
+
+
 def acc_gen():
     i = 10101
     while True:
         yield i
         i+=1
-def add_costumerData(acc_num,name,phone,addr,pan,card,u_name,u_pass,aadhaar,balance):
-    lis= []
-    lis.append(acc_num)
 
+
+def add_costumerData(acc_num,name,phone,addr,pan,card,u_name,u_pass,aadhaar,balance):
+    lis = []
+    lis.append(acc_num)
+    lis.append(name)
+    lis.append(u_name)
+    lis.append(u_pass)
+    lis.append(balance)
+    lis.append(phone)
+    lis.append(addr)
+    lis.append(pan)
+    lis.append(card)
+    lis.append(aadhaar)
+    acc_date = dt.today()
     hist = "deposit  " + str(acc_date) + "  amount: " + str(balance)
-    history = [hist]
+    his = [hist]
+    lis.append(his)
+    filename = str(acc_num)
+    f = open('acc'+filename,"wb")
+    pickle.dump(lis,f)
+    f.close()
 
 
 
@@ -38,20 +55,20 @@ def enter_data():
 
     balance = float(input("Enter the min balance 5000"))
 
-
-    while True:
-        if len(str(aadhaar)) != 12:
-            aadhaar = int(input("enter the 12 digit addhar number:"))
-        if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
-            pan = input("enter the  correct pan number:")
-        if balance < 5000.00:
-            print("Amount is less than min amount")
-            balance = float(input("enter the minimum balance"))
-        if name == u_name:
-            print("user_name is unique not same as Name")
-            u_name = input("enter the user name we have: ")
-        else:
-            break
+    # while True:
+    #     if len(str(aadhaar)) != 12:
+    #         aadhaar = int(input("enter the 12 digit addhar number:"))
+    #     if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
+    #         pan = input("enter the  correct pan number:")
+    #     if balance < 5000.00:
+    #         print("Amount is less than min amount")
+    #         balance = float(input("enter the minimum balance"))
+    #     if name == u_name:
+    #         print("user_name is unique not same as Name")
+    #         u_name = input("enter the user name we have: ")
+    #     else:
+    #         break
 
     add_costumerData(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance)
 
+enter_data()
