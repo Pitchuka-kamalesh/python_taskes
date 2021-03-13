@@ -6,11 +6,14 @@ def acc_gen():
     i = 10101
     while True:
         yield i
-        i+=1
+        i += 1
 
 
-def add_costumerData(acc_num,name,phone,addr,pan,card,u_name,u_pass,aadhaar,balance):
+def add_costumerdata(acc_num, name, phone, addr, pan, card,
+                     u_name, u_pass, aadhaar, balance):
+
     lis = []
+
     lis.append(acc_num)
     lis.append(name)
     lis.append(u_name)
@@ -26,15 +29,16 @@ def add_costumerData(acc_num,name,phone,addr,pan,card,u_name,u_pass,aadhaar,bala
     his = [hist]
     lis.append(his)
     filename = str(acc_num)
-    f = open('acc'+filename,"wb")
-    pickle.dump(lis,f)
+    f = open('acc' + filename, "wb")
+    pickle.dump(lis, f)
     f.close()
 
 
+accont = acc_gen()
+
 
 def enter_data():
-    accont = acc_gen()
-
+    global accont
     acc_num = next(accont)
 
     name = input("enter the full name : ")
@@ -58,7 +62,7 @@ def enter_data():
     while True:
         if len(str(aadhaar)) != 12:
             aadhaar = int(input("enter the 12 digit addhar number:"))
-        if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
+        if not (pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
             pan = input("enter the  correct pan number:")
         if balance < 5000.00:
             print("Amount is less than min amount")
@@ -69,4 +73,5 @@ def enter_data():
         else:
             break
 
-    add_costumerData(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance)
+    add_costumerdata(acc_num=acc_num, name=name, phone=phone, addr=addr, pan=pan, card=card, u_name=u_name,
+                     u_pass=u_pass, aadhaar=aadhaar, balance=balance)
