@@ -41,23 +41,22 @@ def enter_data():
 
     acc_date = datetime.datetime.today()
 
-    # while True:
-    #     if len(str(aadhaar)) != 12:
-    #         aadhaar = int(input("enter the 12 digit addhar number:"))
-    #     if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
-    #         pan = input("enter the  correct pan number:")
-    #     if balance < 5000.00:
-    #         balance = float(input("enter the minimum balance"))
-    #     else:
-    #         break
+    while True:
+        if len(str(aadhaar)) != 12:
+            aadhaar = int(input("enter the 12 digit addhar number:"))
+        if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
+            pan = input("enter the  correct pan number:")
+        if balance < 5000.00:
+            balance = float(input("enter the minimum balance"))
+        else:
+            break
     hist = "deposit  " + str(acc_date) + "  amount: " + str(balance)
     history = [hist]
     account = user_data(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance,history=history)
     return account
 # amount deposity  varible  only integer
 
-# user_name and password is true then bank balance ,transcition  if it is true then deposite and transistion ammount then valid balanvce
-# retrieving the data from the user
+
 #
 #bank data must store in dictnoary
 

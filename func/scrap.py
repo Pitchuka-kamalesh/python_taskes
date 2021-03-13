@@ -442,11 +442,17 @@
 #     print("0")
 # elif a == 0:
 #     print("0")
-# else:
-#     pass
-a = [10,20,'python']
-a.append("bavalue")
-b = a# deep coping or aliasing
-
-print("id a",a)
-print("id b",b)
+# # else:
+# #     pass
+# a = [10,20,'python']
+# a.append("bavalue")
+# b = a# deep coping or aliasing
+#
+# # print("id a",a)
+# # print("id b",b)
+# a = {"apple":25,"bananna":25}
+# for  in a.items():
+#     print(f"{}")
+iter1 = [1, 2, 3, 4]
+iter2 = ['a', 'b', 'c']
+[print(x, y) for x in iter1 for y in iter2]
