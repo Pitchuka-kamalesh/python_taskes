@@ -27,7 +27,7 @@ while True:
 
     if option == 3:
         acc = int(input("Enter the account Number:"))
-        update(acc) # This function is in update.py
+        update(acc)   # This function is in update.py
         continue
     else:
         print("invalid option")
