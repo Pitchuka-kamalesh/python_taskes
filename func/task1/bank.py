@@ -12,6 +12,7 @@ def goback():
     i = int(input("enter the option:"))
     if i == 1:
         transfer()
+
     elif i == 2:
         sys.exit()
     else:
@@ -44,7 +45,7 @@ def bank_details():
     goback()
 
 
-#if user select the payee option then this function will execuited this function
+# if user select the payee option then this function will execuited this function
 
 
 def transistion():
