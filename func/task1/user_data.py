@@ -48,6 +48,8 @@ def enter_data():
             pan = input("enter the  correct pan number:")
         if balance < 5000.00:
             balance = float(input("enter the minimum balance"))
+        if True:
+            pass
         else:
             break
     hist = "deposit  " + str(acc_date) + "  amount: " + str(balance)
