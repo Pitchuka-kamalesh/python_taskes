@@ -22,12 +22,12 @@ while True:
 
     if option == 2:
         acc = int(input("Enter the account Number:"))
-        read_data(acc)
+        read_data(acc)  # This function is in read_user.py
         continue
 
     if option == 3:
         acc = int(input("Enter the account Number:"))
-        update(acc)
+        update(acc) # This function is in update.py
         continue
     else:
         print("invalid option")
