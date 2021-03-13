@@ -70,5 +70,3 @@ def enter_data():
             break
 
     add_costumerData(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance)
-
-enter_data()
