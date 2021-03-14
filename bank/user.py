@@ -1,5 +1,6 @@
 from datetime import datetime as dt
 import pickle
+import re
 
 
 def acc_gen():
@@ -11,7 +12,6 @@ def acc_gen():
 
 def add_costumerdata(acc_num, name, phone, addr, pan, card,
                      u_name, u_pass, aadhaar, balance):
-
     lis = []
 
     lis.append(acc_num)
@@ -37,41 +37,87 @@ def add_costumerdata(acc_num, name, phone, addr, pan, card,
 accont = acc_gen()
 
 
-def enter_data():
+def create_user_account():
     global accont
     acc_num = next(accont)
 
     name = input("enter the full name : ")
+    while True:
+        if len(name) == 0:
+            name = input("enter the full name : ")
+        else:
+            break
 
-    phone = int(input("enter the phone number : "))
+    phone = input("enter the phone number : ")
+    while True:
+        if re.fullmatch(r"[0-9]{10}", phone) and len(phone) == 10:
+            phone = int(phone)
+            break
+        else:
+            phone = input("enter the phone number : ")
 
     addr = input("enter the address: ")
 
     pan = input("enter the pan number")
+    while True:
+        if re.match(r"^[a-z]{5}[0-9]{5}[a-z]$", pan) and len(pan) != 0:
+            break
+
+        else:
+            pan = input("enter the  correct pan number:")
 
     card = input("enter the debit or credit card:")
-
-    u_name = input("enter the user name we have: ")
-
-    u_pass = input("enter the password:")
-
-    aadhaar = int(input("enter the 12 digit  addhar number:"))
-
-    balance = float(input("Enter the min balance 5000"))
-
     while True:
-        if len(str(aadhaar)) != 12:
-            aadhaar = int(input("enter the 12 digit addhar number:"))
-        if not (pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
-            pan = input("enter the  correct pan number:")
-        if balance < 5000.00:
-            print("Amount is less than min amount")
-            balance = float(input("enter the minimum balance"))
-        if name == u_name:
-            print("user_name is unique not same as Name")
-            u_name = input("enter the user name we have: ")
+        if re.match("credit|debit", card):
+            break
+        else:
+            card = input("enter the debit or credit card:")
+
+    u_name = input("enter the user_name: ")
+    while True:
+        if len(u_name) != 0:
+            if u_name == name:
+                print("user_name is unique not same as Name")
+                u_name = input("enter the user_name: ")
+            else:
+                break
+        elif len(u_name) == 0:
+            u_name = input("enter the user_name: ")
         else:
             break
 
-    add_costumerdata(acc_num=acc_num, name=name, phone=phone, addr=addr, pan=pan, card=card, u_name=u_name,
-                     u_pass=u_pass, aadhaar=aadhaar, balance=balance)
+    u_pass = input("enter the password len is 8:")
+    while True:
+        if len(u_pass) == 8 and re.fullmatch(r"[a-zA-z0-9@]{8}", u_pass):
+            break
+        else:
+            print("Allowed characters in password  are [a-zA-z0-9@]")
+            u_pass = input("enter the password:")
+
+    aadhaar = input("enter the 12 digit  addhar number:")
+
+    while True:
+        if len(aadhaar) != 12 and re.fullmatch(r"[0-9]{12}", aadhaar):
+            aadhaar = int(aadhaar)
+            break
+
+        else:
+            aadhaar = input("enter the 12 digit addhar number:")
+
+    balance = input("Enter the min balance 5000")
+
+    while True:
+        if len(balance) >= 4 and re.fullmatch(r"\d", balance):
+            print("Amount is less than min amount")
+            balance = float(balance)
+            if balance < 5000.0:
+                balance = input("Enter the min balance 5000")
+            else:
+                break
+        else:
+            balance = input("Enter the min balance 5000")
+
+    add_costumerdata(acc_num = acc_num, name = name, phone = phone,
+                     addr = addr, pan = pan, card = card,
+                     u_name = u_name, u_pass = u_pass,
+                     aadhaar = aadhaar, balance = balance)

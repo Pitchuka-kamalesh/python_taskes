@@ -453,6 +453,35 @@
 # a = {"apple":25,"bananna":25}
 # for  in a.items():
 #     print(f"{}")
-iter1 = [1, 2, 3, 4]
-iter2 = ['a', 'b', 'c']
-[print(x, y) for x in iter1 for y in iter2]
+# iter1 = [1, 2, 3, 4]
+# iter2 = ['a', 'b', 'c']
+# [print(x, y) for x in iter1 for y in iter2]
+import re
+# # phone = '123456789012'
+# pan = "abcde12345gf"
+# # pan_v = re.match(r'\w{5}+\d{5} ]',pan)
+#
+# # print(pan_v)
+# phone = input("enter the pan number : ")
+# dat = re.fullmatch(r"^[a-z]{5}[0-9]{5}[a-z]$", phone)
+# while True:
+#     if dat:
+#         print(dat.group())
+#         break
+#     else:
+#         phone = input("enter the phone number : ")
+# u_pass=input("enter the password:")
+# while True:
+#     if len(u_pass) >= 8 and re.match(r"[a-zA-z0-9@]{8}", u_pass):
+#         break
+#     else:
+#         u_pass=input("enter the password:")
+balance=input("Enter the min balance 5000")
+
+while True:
+    if len(balance) >= 4 and re.match(r"\d", balance):
+        print("Amount is less than min amount")
+        balance = float(balance)
+        break
+    else:
+        balance=input("Enter the min balance 5000")
