@@ -479,9 +479,12 @@ import re
 balance=input("Enter the min balance 5000")
 
 while True:
-    if len(balance) >= 4 and re.match(r"\d", balance):
-        print("Amount is less than min amount")
+    if re.match(r"\d{4}", balance):
         balance = float(balance)
-        break
+        if balance < 5000.0:
+            print("Amount is less than min amount")
+            balance = input("Enter the min balance 5000")
+        else:
+            break
     else:
-        balance=input("Enter the min balance 5000")
+        balance = input("Enter the min balance 5000")

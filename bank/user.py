@@ -107,10 +107,10 @@ def create_user_account():
     balance = input("Enter the min balance 5000")
 
     while True:
-        if len(balance) >= 4 and re.fullmatch(r"\d", balance):
-            print("Amount is less than min amount")
+        if re.match(r"\d{4}", balance):
             balance = float(balance)
             if balance < 5000.0:
+                print("Amount is less than min amount")
                 balance = input("Enter the min balance 5000")
             else:
                 break
