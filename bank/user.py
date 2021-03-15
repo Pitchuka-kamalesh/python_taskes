@@ -43,24 +43,29 @@ def create_user_account():
 
     name = input("enter the full name : ")
     while True:
-        if len(name) == 0:
+        if len(name) == 0 and re.match(r"[a-zA-z ]", name):
             name = input("enter the full name : ")
         else:
             break
 
     phone = input("enter the phone number : ")
     while True:
-        if re.fullmatch(r"[0-9]{10}", phone) and len(phone) == 10:
+        if re.fullmatch(r"^[6-9][0-9]{9}", phone) and len(phone) == 10:
             phone = int(phone)
             break
         else:
             phone = input("enter the phone number : ")
 
     addr = input("enter the address: ")
+    while True:
+        if len(addr) != 0 and re.match(r"[a-z]", addr):
+            break
+        else:
+            addr = input("enter the address: ")
 
     pan = input("enter the pan number")
     while True:
-        if re.match(r"^[a-z]{5}[0-9]{5}[a-z]$", pan) and len(pan) != 0:
+        if re.fullmatch(r"^[a-z]{5}[0-9]{5}[a-z]$", pan) and len(pan) != 0:
             break
 
         else:
@@ -75,7 +80,7 @@ def create_user_account():
 
     u_name = input("enter the user_name: ")
     while True:
-        if len(u_name) != 0:
+        if len(u_name) != 0 and re.match(r"^[a-z]{5}[0-9]", u_name):
             if u_name == name:
                 print("user_name is unique not same as Name")
                 u_name = input("enter the user_name: ")
@@ -88,7 +93,7 @@ def create_user_account():
 
     u_pass = input("enter the password len is 8:")
     while True:
-        if len(u_pass) == 8 and re.fullmatch(r"[a-zA-z0-9@]{8}", u_pass):
+        if len(u_pass) == 8 and re.fullmatch(r"[a-zA-z0-9]{8}", u_pass):
             break
         else:
             print("Allowed characters in password  are [a-zA-z0-9@]")
@@ -97,7 +102,7 @@ def create_user_account():
     aadhaar = input("enter the 12 digit  addhar number:")
 
     while True:
-        if len(aadhaar) != 12 and re.fullmatch(r"[0-9]{12}", aadhaar):
+        if len(aadhaar) == 12 and re.fullmatch(r"[0-9]{12}", aadhaar):
             aadhaar = int(aadhaar)
             break
 

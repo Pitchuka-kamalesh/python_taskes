@@ -476,15 +476,40 @@ import re
 #         break
 #     else:
 #         u_pass=input("enter the password:")
-balance=input("Enter the min balance 5000")
+# balance=input("Enter the min balance 5000")
+# #
+# while True:
+#     if re.match(r"\d{4}", balance):
+#         balance = float(balance)
+#         if balance < 5000.0:
+#             print("Amount is less than min amount")
+#             balance = input("Enter the min balance 5000")
+#         else:
+#             break
+#     else:
+#         balance = input("Enter the min balance 5000")
+# name = input("Enter the full name:")
+# # dat =
+# while True:
+#
+#     if re.match(r'[a-zA-Z]', name):
+#         print(re.match(r'[a-zA-Z ]', name))
+#         break
+#     else:
+#         name = input("Enter the full name")
+# phone = input("enter the phone number : ")
+# while True:
+#     if re.fullmatch(r"^[6-9][0-9]{9}?<[@]>", phone) and len(phone) == 10:
+#         phone = int(phone)
+#         break
+#     else:
+#         print("Invalid Phone Number")
+#         phone = input("enter the phone number : ")
 
+u_pass = input("enter the password len is 8:")
 while True:
-    if re.match(r"\d{4}", balance):
-        balance = float(balance)
-        if balance < 5000.0:
-            print("Amount is less than min amount")
-            balance = input("Enter the min balance 5000")
-        else:
-            break
+    if len(u_pass) >= 8 and re.fullmatch(r"[a-zA-Z0-9@]{0,16}", u_pass):
+        break
     else:
-        balance = input("Enter the min balance 5000")
+        print("Allowed characters in password  are [a-zA-z0-9@]")
+        u_pass = input("enter the password:")

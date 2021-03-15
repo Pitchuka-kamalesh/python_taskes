@@ -9,10 +9,10 @@ a = [1, 2, 3, 5, 6, 7, 8, 9]
 def profile_update():
     name = input("enter the full name : ")
     while True:
-        if len(name) == 0:
-            name = input("enter the full name : ")
-        else:
+        if len(name) != 0 and re.match(r"[a-zA-z ]{0,60}", name):
             break
+        else:
+            name = input("enter the full name : ")
 
     u_name = input("enter the user name we have: ")
 
@@ -33,7 +33,7 @@ def profile_update():
 
     phone = int(input("enter the phone number : "))
     while True:
-        if re.fullmatch(r"[0-9]{10}", phone) and len(phone) == 10:
+        if re.fullmatch(r"^[6-9][0-9]{9}", phone) and len(phone) == 10:
             phone = int(phone)
             break
         else:
