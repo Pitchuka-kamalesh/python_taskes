@@ -85,7 +85,7 @@ def update(acc):
     print("*"*10 + "  Update Account Details  " + "*"*10)
     data_update = profile_update()
     for i, j in zip(a, data_update):
-        print(" "*20 + f"{key_s[i]}" + " "*20)
+        print(f"{key_s[i]}")
         print(str(data[i]) + f"  ⏩ {j} ")
         data[i] = j
     f.seek(0, 0)
