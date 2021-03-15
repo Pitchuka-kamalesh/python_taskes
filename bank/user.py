@@ -43,7 +43,7 @@ def create_user_account():
 
     name = input("enter the full name : ")
     while True:
-        if len(name) == 0 and re.match(r"[a-zA-z ]", name):
+        if len(name) == 0 and re.match(r"[a-zA-z ]{0,60}", name):
             name = input("enter the full name : ")
         else:
             break
@@ -58,7 +58,7 @@ def create_user_account():
 
     addr = input("enter the address: ")
     while True:
-        if len(addr) != 0 and re.match(r"[a-z]", addr):
+        if len(addr) != 0 and re.match(r"[a-z0-9-/ ]{0,60}", addr):
             break
         else:
             addr = input("enter the address: ")
@@ -80,7 +80,7 @@ def create_user_account():
 
     u_name = input("enter the user_name: ")
     while True:
-        if len(u_name) != 0 and re.match(r"^[a-z]{5}[0-9]", u_name):
+        if len(u_name) >= 4 and re.match(r"^[a-z]{5,}[0-9]", u_name):
             if u_name == name:
                 print("user_name is unique not same as Name")
                 u_name = input("enter the user_name: ")
@@ -93,7 +93,7 @@ def create_user_account():
 
     u_pass = input("enter the password len is 8:")
     while True:
-        if len(u_pass) == 8 and re.fullmatch(r"[a-zA-z0-9]{8}", u_pass):
+        if len(u_pass) == 8 and re.fullmatch(r"[a-zA-z0-9@]{8}", u_pass):
             break
         else:
             print("Allowed characters in password  are [a-zA-z0-9@]")

@@ -31,7 +31,7 @@ def profile_update():
             print("Allowed characters in password  are [a-zA-z0-9@]")
             u_pass = input("enter the password:")
 
-    phone = int(input("enter the phone number : "))
+    phone = input("enter the phone number : ")
     while True:
         if re.fullmatch(r"^[6-9][0-9]{9}", phone) and len(phone) == 10:
             phone = int(phone)
@@ -62,10 +62,10 @@ def profile_update():
         else:
             card = input("enter the debit or credit card:")
 
-    aadhaar = int(input("enter the 12 digit  addhar number:"))
+    aadhaar = input("enter the 12 digit  addhar number:")
 
     while True:
-        if len(aadhaar) != 12 and re.fullmatch(r"[0-9]{12}", aadhaar):
+        if len(aadhaar) == 12 and re.fullmatch(r"[0-9]{12}", aadhaar):
             aadhaar = int(aadhaar)
             break
 
