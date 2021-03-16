@@ -14,7 +14,7 @@ def profile_update():
         else:
             name = input("enter the full name : ")
 
-    u_name = input("enter the user name we have: ")
+    u_name = input("enter the user name : ")
 
     while True:
         if name == u_name:
