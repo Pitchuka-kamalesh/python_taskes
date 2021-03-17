@@ -6,7 +6,8 @@ from update import *
 # 1 . for the new user account details
 # 2.  for the read the account details
 # 3.  for the modifying the account details
-
+# TODO: have to update the bank transaction history and payee and validation of bank account and storing of
+#   bank account number
 print("*******  WELCOME TO BANK  ********")
 while True:
     choice = input('enter the yes to continue and no stop :')

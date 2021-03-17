@@ -5,6 +5,7 @@ data = []
 
 a = [1, 2, 3, 5, 6, 7, 8, 9]
 
+# todo: convert the validation into seperate modules and write 
 
 def profile_update():
     name = input("enter the full name : ")

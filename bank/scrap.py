@@ -16,17 +16,30 @@
 # u_name = input("enter the user name")
 # a = u_name == ""
 # print(a)
-import re
+# import re
 
-balance=input("Enter the min balance 5000")
+# balance=input("Enter the min balance 5000")
 
+# while True:
+#     if re.match(r"\d", balance):
+#         balance = float(balance)
+#         if balance < 5000.0:
+#             print("Amount is less than min amount")
+#             balance=input("Enter the min balance 5000")
+#         else:
+#             break
+#     else:
+#         balance=input("Enter the min balance 5000")
+
+data_1 = {'one':10,"two":{"three":30,"four":{"five":50,"six":{"seven":70}}}}
+out = []
 while True:
-    if re.match(r"\d", balance):
-        balance = float(balance)
-        if balance < 5000.0:
-            print("Amount is less than min amount")
-            balance=input("Enter the min balance 5000")
-        else:
-            break
+
+    for k_key,k_valu in data_1.items():
+        out.append(k_valu)
+    if str(out[-1]).isnumeric():
+        break
     else:
-        balance=input("Enter the min balance 5000")
+        data_1 = out.pop()
+ 
+print(out)
