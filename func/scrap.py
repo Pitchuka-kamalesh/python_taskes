@@ -506,10 +506,18 @@ import re
 #         print("Invalid Phone Number")
 #         phone = input("enter the phone number : ")
 
-u_pass = input("enter the password len is 8:")
-while True:
-    if len(u_pass) >= 8 and re.fullmatch(r"[a-zA-Z0-9@]{0,16}", u_pass):
-        break
-    else:
-        print("Allowed characters in password  are [a-zA-z0-9@]")
-        u_pass = input("enter the password:")
+# u_pass = input("enter the password len is 8:")
+# while True:
+#     if len(u_pass) >= 8 and re.fullmatch(r"[a-zA-Z0-9@]{0,16}", u_pass):
+#         break
+#     else:
+#         print("Allowed characters in password  are [a-zA-z0-9@]")
+#         u_pass = input("enter the password:")
+a = 100
+b = 200
+
+a = a ^ b 
+b = a ^ b
+a = a ^ b
+print(a)
+print(b)
