@@ -456,13 +456,13 @@
 # iter1 = [1, 2, 3, 4]
 # iter2 = ['a', 'b', 'c']
 # [print(x, y) for x in iter1 for y in iter2]
-import re
+# import re
 # # phone = '123456789012'
 # pan = "abcde12345gf"
 # # pan_v = re.match(r'\w{5}+\d{5} ]',pan)
 #
 # # print(pan_v)
-# phone = input("enter the pan number : ")
+# phone = input("enter the amount number : ")
 # dat = re.fullmatch(r"^[a-z]{5}[0-9]{5}[a-z]$", phone)
 # while True:
 #     if dat:
@@ -477,7 +477,7 @@ import re
 #     else:
 #         u_pass=input("enter the password:")
 # balance=input("Enter the min balance 5000")
-# #
+
 # while True:
 #     if re.match(r"\d{4}", balance):
 #         balance = float(balance)
@@ -513,11 +513,33 @@ import re
 #     else:
 #         print("Allowed characters in password  are [a-zA-z0-9@]")
 #         u_pass = input("enter the password:")
-a = 100
-b = 200
+# a = 100
+# b = 200
+#
+# a = a ^ b
+# b = a ^ b
+# a = a ^ b
+#
+# a = a.to_bytes()
+# print(a)
+# print(b)
 
-a = a ^ b 
-b = a ^ b
-a = a ^ b
-print(a)
-print(b)
+# nesting a function
+#
+# def outer_function():
+#     print("This is outer function")
+#     def inner_function():
+#         print("This is inner function")
+#     return inner_function
+#
+#
+# if __name__ == '__main__':
+#     data = outer_function()
+#     data()
+
+# x = [i for i in range(1,101,2)]
+# print (x)
+
+print(list(map((lambda x: x**2),(range(100)))))
+print(list(map(lambda x : ("fizz"*(x%3 == 0)+"buzz"*(x%5 == 0) or str(x)),range(1,101))))
+print(list(filter((lambda x: x%2),range(100))))

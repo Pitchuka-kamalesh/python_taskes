@@ -3,15 +3,16 @@ bank_acc = {}
 
 
 def gen_acc():
-    i = 1
+    i = 100001
     while True:
         yield i
         i += 1
 
 
 def user_data(**kwargs):
-    global bank_acc
+
     bank_acc = kwargs
+    print(kwargs)
 
     return bank_acc
 
@@ -41,17 +42,16 @@ def enter_data():
 
     acc_date = datetime.datetime.today()
 
-    while True:
-        if len(str(aadhaar)) != 12:
-            aadhaar = int(input("enter the 12 digit addhar number:"))
-        if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
-            pan = input("enter the  correct pan number:")
-        if balance < 5000.00:
-            balance = float(input("enter the minimum balance"))
-        if True:
-            pass
-        else:
-            break
+    # while True:
+    #     if len(str(aadhaar)) != 12:
+    #         aadhaar = int(input("enter the 12 digit addhar number:"))
+    #     if not(pan[0:5].isalpha() and pan[5:-1].isnumeric() and pan[-1].isalpha()):
+    #         pan = input("enter the  correct pan number:")
+    #     if balance < 5000.00:
+    #         balance = float(input("enter the minimum balance"))
+    #
+    #     else:
+    #         break
     hist = "deposit  " + str(acc_date) + "  amount: " + str(balance)
     history = [hist]
     accounts = user_data(acc_num = acc_num,name = name,phone = phone,addr = addr,pan=pan,card = card,u_name = u_name,u_pass=u_pass,aadhaar = aadhaar,balance = balance,history=history)
@@ -66,3 +66,4 @@ def enter_data():
 
 # if present then trasistion details
 
+print(enter_data())

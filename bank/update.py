@@ -50,7 +50,7 @@ def profile_update():
     pan = input("enter the pan number")
 
     while True:
-        if re.match(r"^[a-z]{5}[0-9]{5}[a-z]$", pan) and len(pan) != 0:
+        if re.match(r"^[a-z]{5}[0-9]{4}[a-z]$", pan) and len(pan) != 0:
             break
 
         else:
